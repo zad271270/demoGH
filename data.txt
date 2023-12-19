@@ -1,0 +1,4 @@
+Namespaces are “hidden” from each other, but they are not fully isolated by default. A service in one Namespace can talk to a service in another Namespace
+
+Services in Kubernetes expose their endpoint using a common DNS pattern
+

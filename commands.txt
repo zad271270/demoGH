@@ -1,0 +1,35 @@
+Imperative
+kubectl create ns nginx
+kubectl create deployment nginx-project --image=nginx --replicas=2 --namespace=nginx
+kubectl config set-context --current --namespace=nginx
+kubectl get deployment --namespace=nginx 
+kubectl get deployment --namespace=nginx -o yaml
+kubectl describe deployment nginx-project --namespace=nginx
+kubectl logs deployment/nginx --namespace=nginx
+kubectl scale deployment nginx --replicas=3
+
+
+kubectl port-forward nginx-project-6858bdb67c-6c5sl 8080:80
+kubectl expose deployment/nginx --name=nginx-project --type=NodePort --port=80
+kubectl expose deployment/nginx --namespace=nginx --port=80
+
+kubectl delete deployment nginx --namespace=ngix
+kubectl delete deployment nginx
+kubectl delete -f nginx.yaml
+kubectl config view
+kubectl config current-context
+kubectl config use-context dev
+kubectl config set-context --current --namespace=nginx
+
+
+kubectl autoscale deployment nginx-project --cpu-percent=5 --min=3 --max=5
+kubectl get hpa
+
+
+
+
+kubectl exec nginx-764bb955b8-54pcx -- ls
+kubectl exec --stdin --tty nginx-764bb955b8-54pcx -- /bin/sh
+
+
+
